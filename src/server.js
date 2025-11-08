@@ -173,8 +173,8 @@ app.get('/productos', (req, res) => {
   res.send(productos);  // Enviar solo la lista de productos
 });
 
-// Lista de clientes
-let clientes = [
+// Lista de usuarios
+let usuarios = [
     {
         id: 1,
         dni: "12345678A",
@@ -186,23 +186,23 @@ let clientes = [
         pedidos: [] 
       }
 ]
-app.get('/clientes', (req, res) => {
-  res.send(clientes);
+app.get('/usuarios', (req, res) => {
+  res.send(usuarios);
 });
 
-// Ruta para agregar un nuevo cliente
-app.post('/clientes/registro', (req, res) => {
+// Ruta para agregar un nuevo usuario
+app.post('/usuarios/registro', (req, res) => {
   console.log("Datos recibidos:" + req.body); 
   const { dni, nombre, direccion, telefono, email, password } = req.body;
-  // Verificar si ya existe un cliente con el mismo email
-  const clienteExistente = clientes.find(c => c.email === email);
-  if (clienteExistente) {
+  // Verificar si ya existe un usuario con el mismo email
+  const usuarioExistente = usuarios.find(c => c.email === email);
+  if (usuarioExistente) {
     // Si el email ya está registrado, devolver un error
     return res.status(400).send({ message: 'El usuario con el email ${email} ya existe.' });
   }
-  // Crear un nuevo cliente
-  const nuevoCliente = {
-    id: clientes.length + 1, // Generar un nuevo ID
+  // Crear un nuevo usuario
+  const nuevoUsuario = {
+    id: usuarios.length + 1, // Generar un nuevo ID
     dni,
     nombre,
     direccion,
@@ -212,23 +212,23 @@ app.post('/clientes/registro', (req, res) => {
     pedidos: [] // Inicialmente vacío
   };
 
-  // Agregar el nuevo cliente a la lista
-  clientes.push(nuevoCliente);
+  // Agregar el nuevo usuario a la lista
+  usuarios.push(nuevoUsuario);
 
-  // Responder con el nuevo cliente
-  res.status(201).send(nuevoCliente);
+  // Responder con el nuevo usuario
+  res.status(201).send(nuevoUsuario);
 });
 
-// Ruta para login de un cliente
-app.post('/clientes/login', (req, res) => {
+// Ruta para login de un usuario
+app.post('/usuarios/login', (req, res) => {
   const { email, password } = req.body;
 
-  // Buscar el cliente por email
-  const cliente = clientes.find(c => c.email === email);
+  // Buscar el usuario por email
+  const usuario = usuarios.find(c => c.email === email);
 
-  // Verificar si el cliente existe y si la contraseña coincide
-  if (cliente && cliente.password === password) {
-    res.status(200).send(cliente);
+  // Verificar si el usuario existe y si la contraseña coincide
+  if (usuario && usuario.password === password) {
+    res.status(200).send(usuario);
   } else {
     res.status(401).send({ message: 'Email o contraseña incorrectos' });
   }
