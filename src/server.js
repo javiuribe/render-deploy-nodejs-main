@@ -5,152 +5,166 @@ app.use(express.json());
 
 // Lista de productos
 const productos = [
+  // 🧥 CHAQUETAS
   {
-      "id": 1,
-      "nombre": "Margarita",
-      "precio": 8.50,
-      "tipo": "pizza",
-      "size": "GRANDE",
-      "ingredientes": [
-          {
-              "id": 1,
-              "nombre": "Mozzarella",
-              "alergenos": ["Lácteos"]
-          },
-          {
-              "id": 2,
-              "nombre": "Tomate",
-              "alergenos": []
-          },
-          {
-              "id": 3,
-              "nombre": "Albahaca",
-              "alergenos": []
-          }
-      ]
+    "id": 1,
+    "nombre": "Chaqueta Invierno",
+    "marca": "NorthWear",
+    "precioInicial": 89.99,
+    "talla": "L",
+    "color": "NEGRO",
+    "botones": 2,
+    "bolsillos": 4,
+    "conCapucha": true,
+    "nivelAbrigo": 5,
+    "tipo": "chaqueta"
   },
   {
-      "id": 2,
-      "nombre": "Pepperoni",
-      "precio": 9.00,
-      "tipo": "pizza",
-      "size": "MEDIANA",
-      "ingredientes": [
-          {
-              "id": 1,
-              "nombre": "Mozzarella",
-              "alergenos": ["Lácteos"]
-          },
-          {
-              "id": 4,
-              "nombre": "Pepperoni",
-              "alergenos": []
-          }
-      ]
+    "id": 2,
+    "nombre": "Chaqueta de Cuero",
+    "marca": "RiderStyle",
+    "precioInicial": 119.99,
+    "talla": "M",
+    "color": "NEGRO",
+    "botones": 1,
+    "bolsillos": 3,
+    "conCapucha": false,
+    "nivelAbrigo": 4,
+    "tipo": "chaqueta"
   },
   {
-      "id": 3,
-      "nombre": "Espagueti",
-      "precio": 7.00,
-      "tipo": "pasta",
-      "size": null,
-      "ingredientes": [
-          {
-              "id": 5,
-              "nombre": "Espagueti",
-              "alergenos": ["Gluten"]
-          },
-          {
-              "id": 6,
-              "nombre": "Carne Molida",
-              "alergenos": []
-          },
-          {
-              "id": 7,
-              "nombre": "Salsa Boloñesa",
-              "alergenos": ["Lácteos"]
-          }
-      ]
+    "id": 3,
+    "nombre": "Chaqueta Vaquera",
+    "marca": "DenimPro",
+    "precioInicial": 74.99,
+    "talla": "L",
+    "color": "AZUL",
+    "botones": 6,
+    "bolsillos": 2,
+    "conCapucha": false,
+    "nivelAbrigo": 3,
+    "tipo": "chaqueta"
   },
   {
-      "id": 4,
-      "nombre": "Coca-Cola",
-      "precio": 2.50,
-      "tipo": "bebida",
-      "size": "MEDIANA",
-      "ingredientes": [] // No tiene ingredientes
+    "id": 4,
+    "nombre": "Chaqueta Ligera de Primavera",
+    "marca": "FreshWind",
+    "precioInicial": 59.99,
+    "talla": "M",
+    "color": "VERDE",
+    "botones": 0,
+    "bolsillos": 2,
+    "conCapucha": true,
+    "nivelAbrigo": 2,
+    "tipo": "chaqueta"
+  },
+
+  // 👕 CAMISETAS
+  {
+    "id": 5,
+    "nombre": "Camiseta Casual",
+    "marca": "UrbanLife",
+    "precioInicial": 19.99,
+    "talla": "M",
+    "color": "AZUL",
+    "botones": 0,
+    "bolsillos": 0,
+    "conCapucha": false,
+    "nivelAbrigo": 1,
+    "tipo": "camiseta"
   },
   {
-      "id": 5,
-      "nombre": "Agua Mineral",
-      "precio": 1.50,
-      "tipo": "bebida",
-      "size": "PEQUENA",
-      "ingredientes": [] // No tiene ingredientes
+    "id": 6,
+    "nombre": "Camiseta Básica",
+    "marca": "Adidas",
+    "precioInicial": 14.99,
+    "talla": "L",
+    "color": "BLANCO",
+    "botones": 0,
+    "bolsillos": 0,
+    "conCapucha": false,
+    "nivelAbrigo": 1,
+    "tipo": "camiseta"
   },
-  // Nueva pizza
   {
-      "id": 6,
-      "nombre": "Cuatro Quesos",
-      "precio": 10.00,
-      "tipo": "pizza",
-      "size": "GRANDE",
-      "ingredientes": [
-          {
-              "id": 1,
-              "nombre": "Mozzarella",
-              "alergenos": ["Lácteos"]
-          },
-          {
-              "id": 2,
-              "nombre": "Gorgonzola",
-              "alergenos": ["Lácteos"]
-          },
-          {
-              "id": 3,
-              "nombre": "Parmesano",
-              "alergenos": ["Lácteos"]
-          },
-          {
-              "id": 4,
-              "nombre": "Ricotta",
-              "alergenos": ["Lácteos"]
-          }
-      ]
+    "id": 7,
+    "nombre": "Camiseta Deportiva",
+    "marca": "Nike",
+    "precioInicial": 24.99,
+    "talla": "S",
+    "color": "ROJO",
+    "botones": 0,
+    "bolsillos": 0,
+    "conCapucha": false,
+    "nivelAbrigo": 1,
+    "tipo": "camiseta"
   },
-  // Nueva bebida
   {
-      "id": 7,
-      "nombre": "Fanta Naranja",
-      "precio": 2.00,
-      "tipo": "bebida",
-      "size": "MEDIANA",
-      "ingredientes": [] // No tiene ingredientes
+    "id": 8,
+    "nombre": "Camiseta Oversize",
+    "marca": "Zara",
+    "precioInicial": 22.50,
+    "talla": "XL",
+    "color": "NEGRO",
+    "botones": 0,
+    "bolsillos": 0,
+    "conCapucha": false,
+    "nivelAbrigo": 1,
+    "tipo": "camiseta"
   },
-  // Nuevo plato de pasta
+
+  // 👖 PANTALONES
   {
-      "id": 8,
-      "nombre": "Pasta Alfredo",
-      "precio": 8.00,
-      "tipo": "pasta",
-      "size": null,
-      "ingredientes": [
-          {
-              "id": 9,
-              "nombre": "Fideos",
-              "alergenos": ["Gluten"]
-          },
-          {
-              "id": 10,
-              "nombre": "Salsa Alfredo",
-              "alergenos": ["Lácteos"]
-          },
-          {
-              "id": 11,
-              "nombre": "Perejil",
-              "alergenos": []
-          }
-      ]
+    "id": 9,
+    "nombre": "Pantalón Deportivo",
+    "marca": "FitZone",
+    "precioInicial": 39.99,
+    "talla": "S",
+    "color": "ROJO",
+    "botones": 1,
+    "bolsillos": 2,
+    "conCapucha": false,
+    "nivelAbrigo": 2,
+    "tipo": "pantalon"
+  },
+  {
+    "id": 10,
+    "nombre": "Pantalón Vaquero Slim",
+    "marca": "Levi’s",
+    "precioInicial": 59.99,
+    "talla": "M",
+    "color": "AZUL",
+    "botones": 1,
+    "bolsillos": 4,
+    "conCapucha": false,
+    "nivelAbrigo": 2,
+    "tipo": "pantalon"
+  },
+  {
+    "id": 11,
+    "nombre": "Pantalón Chino",
+    "marca": "Springfield",
+    "precioInicial": 49.99,
+    "talla": "L",
+    "color": "VERDE",
+    "botones": 1,
+    "bolsillos": 2,
+    "conCapucha": false,
+    "nivelAbrigo": 2,
+    "tipo": "pantalon"
+  },
+  {
+    "id": 12,
+    "nombre": "Pantalón Cargo",
+    "marca": "H&M",
+    "precioInicial": 44.99,
+    "talla": "XL",
+    "color": "NEGRO",
+    "botones": 2,
+    "bolsillos": 6,
+    "conCapucha": false,
+    "nivelAbrigo": 3,
+    "tipo": "pantalon"
   }
 ];
 
